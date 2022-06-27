@@ -1,0 +1,47 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". .";
+}
+
+.bezahlen {
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 10px;
+    width: 40vw;
+}
+
+.card {
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 10px;
+    width: 40vw;
+}
+
+span {
+    margin-top: 150px;
+}
+
+.checkout {
+    text-align: center;
+}
+
+img {
+
+    width: 25px;
+    height: 25px;
+    background-color: rgb(195, 195, 255);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+

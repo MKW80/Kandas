@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .post {
+            width: 500px;
+            height: 150px;
+            border: 1px solid lightgray;
+            padding: 8px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <input type="text" id="message" placeholder="Deine Name">
+
+
+    <button onclick="addPost()">posten</button>
+
+
+    <div id="myposts">Hier wird der ausgegebene Text angezeigt</div>
+
+    <script>
+
+        let eingabe = [];
+        let ausgabe = [];
+
+
+        function addPost() {
+
+            let eingabe = document.getElementById('message').value;
+            let ausgabe = document.getElementById('myposts').value;
+
+
+            for (let i = 0; i < myposts.length; i++) {
+                ausgabe.innerHtml =``;
+                ausgabe.push(myposts) = `<div class="ausgabe"> 
+                    ; 
+          ${ausgabe[i]}
+            </div>
+            `;
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

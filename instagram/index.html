@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Instagram</title>
+
+</head>
+
+<body onload="show()">
+
+
+    <script>
+
+        let posts = [{
+            'author': 'Tagesschau',
+            'image': 'img/bild01.jpg',
+            'descridtion': 'neue Nachrichten',
+            'location': 'London',
+        },
+        {
+            'author': 'Tagesschau',
+            'image': 'img/bild02.jpg',
+            'descridtion': 'neue Nachrichten',
+            'location': 'Paris',
+        },
+        {
+            'author': 'Tagesschau',
+            'image': 'img/bild03.jpg',
+            'descridtion': 'neue Nachrichten',
+            'location': 'Warschau',
+        },
+        {
+            'author': 'Tagesschau',
+            'image': 'img/bild04.jpg',
+            'descridtion': 'neue Nachrichten',
+            'location': 'Istanbul',
+        }];
+
+
+        function show() {
+            document.getElementById('postcontainer').innerHTML += '';
+
+            for (let i = 0; i < posts.length; i++) {
+                const post = posts[i];
+
+                document.getElementById('postcontainer').innerHTML += `
+                    <div>
+                    <img src="${post['image']}">
+                        <div>${post['author']}</div>
+                        <div>${post['descridtion']}</div>
+                        <div>${post['location']}</div>
+                        <input type="text" id="message${i}" placeholder="Deine Name">
+                        <input type="text" id="name${i}" placeholder="neuer post...">
+                        <button onclick="addPost(${i})">posten</button>
+                        <div id="myposts${i}">Hier wird der ausgegebene Text angezeigt</div>
+
+                    </div>
+                `;
+            }
+        }
+
+
+        let names = [];
+        let postIt = [];
+
+
+        function addPost(i) {
+
+            let text = document.getElementById('message'+i).value;
+            let name = document.getElementById('name'+i).value;
+
+            postIt.push(name);
+            names.push(text);
+
+            let myposts = document.getElementById('myposts'+i)
+
+            myposts.innerHTML = '';
+          
+
+            for (let i = 0; i < postIt.length; i++) {
+                myposts.innerHTML += `
+        
+                    <div class="messages"> 
+                     ${names[i]} ${postIt[i]}
+                      </div>
+                      `;
+            }
+        }
+    </script>
+
+    <div class="header">
+
+        <h2>Instagram</h2>
+    </div>
+    <div class="messages">
+        <div id="postcontainer"></div>
+    </div>
+
+</body>
+
+</html>

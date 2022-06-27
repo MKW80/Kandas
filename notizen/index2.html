@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif !important;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .bodyCenter div {
+            height: 180px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            width: 180px;
+            height: 40px;
+            cursor: pointer;
+            background: blue;
+
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            border-radius: 5px;
+        }
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            fill: none;
+            stroke: #fff;
+            stroke-dasharray: 150 480;
+            stroke-dashoffset: 150;
+            transition: 1s ease-in-out;
+        }
+
+        .btn:hover {
+            transition: 0.5s ease-in-out;
+            background: #4F95DA;
+        }
+
+        .btn:hover svg {
+            stroke-dashoffset: -480;
+        }
+
+        .btn span {
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+
+
+        .inputCenter1 input {
+
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            height: 30px;
+
+        }
+
+        .inputCenter2 input {
+
+
+
+            margin-top: 5px;
+
+        }
+
+        input {
+            font-size: 14px;
+            font-weight: 400;
+            max-width: 400px;
+
+        }
+
+        .post {
+            border-radius: 5px;
+            box-shadow: 0px 10px 10px grey;
+            width: 500px;
+            height: 190px;
+            border: 1px solid lightgray;
+            padding: 8px;
+
+            margin-top: 32px;
+
+
+        }
+
+        .searchInput1 {
+            height: 30px;
+            flex: auto;
+            border: none;
+            border-radius: 2px;
+            background: rgb(237, 237, 237);
+            margin-top: 15px;
+            font-size: 12px;
+            outline: none;
+            min-width: 0;
+            text-overflow: ellipsis;
+            color: rgb(120, 120, 120);
+            padding-left: 15px;
+        }
+
+        .searchInput2 {
+            height: 50px;
+            flex: auto;
+            border: none;
+            border-radius: 2px;
+            background: rgb(237, 237, 237);
+            margin-top: 15px;
+            font-size: 12px;
+            outline: none;
+            min-width: 0;
+            text-overflow: ellipsis;
+            color: rgb(120, 120, 120);
+            padding-left: 15px;
+            padding-bottom: 100px;
+
+
+
+        }
+
+        .buttonCenter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        h1 {
+            text-align: center;
+            position: relative;
+            top: 100px;
+
+        }
+
+        .headLine {
+            height: 60px;
+
+            border-bottom: 1px lightgray solid;
+        }
+
+        .aside1 {
+            height: 50px;
+            width: 120px;
+            position: absolute;
+            top: 185px;
+            left: 0px;
+            border-radius: 0px 3px 3px 0px;
+            background-color: rgb(252, 234, 76);
+
+        }
+
+        .aside2 {
+            height: 50px;
+            width: 120px;
+            position: absolute;
+            top: 255px;
+            left: 0px;
+            border-radius: 0px 3px 3px 0px;
+            background-color: rgb(252, 234, 76);
+        }
+
+        .aside3 {
+            height: 50px;
+            width: 120px;
+            position: absolute;
+            top: 325px;
+            left: 0px;
+            border-radius: 0px 3px 3px 0px;
+            background-color: rgb(252, 234, 76);
+        }
+
+        h5 {
+            margin-top: 18px;
+            margin-left: 15px;
+        }
+
+        .close {
+
+            padding-top: 5px;
+        }
+
+        img {
+            position: relative;
+            top: -50px;
+            left: 494px;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body onload="render()">
+    <div class="headLine"></div>
+    <div class="aside1">
+        <h5>Archiv</h5>
+    </div>
+    <div class="aside2">
+        <h5>Notiz</h5>
+    </div>
+    <div class="aside3">
+        <h5>Löschen</h5>
+    </div>
+
+    <div class="bodyCenter">
+        <h1>Notizen einfach speichern</h1>
+        <div class="inputCenter1">
+
+            <input id="message" class="searchInput1" type="text" placeholder="Dein Name">
+        </div>
+
+        <div class="inputCenter2">
+            <input id="name" class="searchInput2" type="text" placeholder="Deine Nachricht">
+        </div>
+
+
+    </div>
+
+    <div class="buttonCenter">
+        <button onclick="addPost()" class="btn">
+
+            <span>Posten</span>
+
+        </button>
+    </div>
+
+
+    <div class="buttonCenter">
+        <div id="myposts"></div>
+    </div>
+
+
+    <script>
+
+        let names = [];
+        let posts = [];
+
+        function render(){
+            let myposts = document.getElementById('myposts')
+
+            myposts.innerHTML = '';
+            document.getElementById('myposts').innerHTML = '';
+
+
+            for (let i = 0; i < posts.length; i++) {
+                posts.reverse();
+                names.reverse();
+                let img = document.createElement('img');
+
+               
+                myposts.innerHTML += `
+                
+
+               <div class="post"> 
+          
+                <div class="close"> 
+
+                <b><span>${names[i]}</span>  <span class="">x</span></b><br>
+                   <img src="/images/delete.png"  onclick="deleteltem(${i})">
+                </div>
+                <hr>
+               ${posts[i]}
+               </div>
+                 `;
+        }
+    }
+
+        function addPost() {
+
+            let message = document.getElementById('message').value;
+            let name = document.getElementById('name').value;
+
+            posts.push(name);
+            names.push(message);
+            render();
+            
+            }
+
+
+            function deleteltem(i) { // <-- Funktion zum löschen der listenpunkte
+                names.splice(i, 1);
+                posts.splice(i, 1);
+                console.log(names);
+                console.log(posts);
+                render();
+
+            }
+        
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

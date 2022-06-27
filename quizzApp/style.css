@@ -1,0 +1,164 @@
+body {
+    background-color: #FEFAEF;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #27355C;
+    border-color: #27355C;
+}
+
+.btn-primary:hover {
+    color: #27355C;
+    background-color: yellowgreen;
+    border-color: #27355C;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-weight: bold ;
+}
+
+.nav-link:hover {
+    color: yellowgreen;
+}
+
+.active {
+    color: yellowgreen !important;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100wh;
+    height: 100vh;;
+    
+}
+
+#sidebar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
+    flex-direction: column;
+    width: 200px;
+    height: 500px;
+    background-color: #27355C;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+#content h2 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#content span {
+    margin-bottom: 10px;
+}
+
+.quiz_start, .quiz_end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz_start h1, .quiz_end h1 {
+    margin-bottom: 50px;
+}
+
+.quiz_start > span, .quiz_end > span {
+    margin-bottom: 50px !important;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.bg-success {
+    background-color: yellowgreen !important;
+    color: black !important;
+}
+
+.bg-success, .bg-danger {
+    color: white;
+}
+
+.bottomCard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#mainCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainCard img {
+    width: 50px;
+    height: auto;
+}
+
+#trophy {
+    position: relative;
+    width: 500px;
+}
+
+#trophy img {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    width: 70px;
+    height: auto;
+}
+
+#result img {
+    width: 100px;
+    margin-bottom: 50px;
+}
+
+#points {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.progress {
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #27355C;
+}

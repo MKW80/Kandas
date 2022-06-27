@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+            padding: 8px;
+            margin-bottom: 32px;
+        }
+    </style>
+
+</head>
+
+
+<body onload="render()">
+
+    <script>
+
+
+        let names = ['ariana', 'berta', 'clara', 'daisy',];
+        let phoneNumbers = ['111', '222', '333', '444',]
+        load();
+
+        function render() {
+            let content = document.getElementById('content'); //<-- div an variable binden
+            content.innerHTML = ''; //<-- div inhalt löschen
+            content.innerHTML = `<h1>meine Kontakte</h1>`; //<-- HTML code einfügen
+            content.innerHTML += `  
+                <div>
+                    <input placeholder="Name" id="name">
+                    <input placeholder="Telefon" id="phone">
+                    <button onclick="addContact()">Hinzufügen</button>
+                </div>
+                `;
+
+            for (let i = 0; i < names.length; i++) { //<-- um 2 unter/nebeneinander werte array im HTML anzuzeigen braucht man immer eine for schleife
+                const name = names[i];
+                const phoneNumber = phoneNumbers[i];
+
+                content.innerHTML += `  
+                <div class="card">
+                <br>
+                <b>Name: </b> ${name} <br>
+                <b>Telefon: </b>${phoneNumber}<br>
+                <button onclick="deleteContact(${i})">Löschen</button><br><br>
+                </div >
+                `;
+            }
+        }
+        function addContact() {
+            let name = document.getElementById('name');
+            let phone = document.getElementById('phone');
+
+            names.push(name.value); //<-- werte werden ins array hinzugefügt aus dem inputfeld
+            phoneNumbers.push(phone.value);
+
+            render();
+            save();
+        }
+
+        function deleteContact(i) {
+            names.splice(i, 1); //<-- eintrag wird gelöscht aus array
+            phoneNumbers.splice(i, 1);
+
+            render();
+            save();
+        }
+
+        function save() {
+            let namesAsText = JSON.stringify(names);
+            let phoneNumbersAsText = JSON.stringify(phoneNumbers);
+
+            localStorage.setItem('names', namesAsText);
+            localStorage.setItem('phoneNumbers', phoneNumbersAsText);
+        }
+
+        function load() {
+            let namesAsText = localStorage.getItem('names');
+            let phoneNumbersAsText = localStorage.getItem('phoneNumbers');
+
+            if (namesAsText && phoneNumbersAsText) {
+                names = JSON.parse('namesAsText');
+                phoneNumbers = JSON.parse('phoneNumbersAsText');
+            }
+        }
+
+    </script>
+
+
+    <div id="content"></div>
+</body>
+
+</html>

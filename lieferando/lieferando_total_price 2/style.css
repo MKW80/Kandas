@@ -1,0 +1,304 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* --- Header --- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    color: white;
+    background-color: #FB6100;
+}
+
+header img {
+    height: 32px;
+}
+
+.logoname {
+    font-size: 20px;
+}
+
+.adress {
+    padding-bottom: 4px;
+    border-bottom: 2px solid white;
+}
+
+.align {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.flag{
+    margin-right: 8px;
+}
+
+/* --- complete Content --- */
+
+.content-cmpl {
+    display: flex;
+}
+
+/* --- left Side --- */
+.left-side {
+    width: 70%;
+}
+
+.background-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --- Company Specific --- */
+
+.company-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.company-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(130px);
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    border: 1px solid #D7D7D7;
+    border-radius: 50% 50%;
+}
+
+.company-logo-inside {
+    height: 72px;
+}
+
+.company-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0 16px 16px 16px;
+}
+
+.rating {
+    color: #FB6100;
+}
+
+.social-interaktiv {
+    display: flex;
+    align-items: center;
+    margin: 16px 0 16px;
+}
+
+.social-interaktiv img {
+    height: 16px;
+    padding: 16px;
+    border: 1px solid #D7D7D7;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.info-button:hover {
+    border: 1px solid #0A3947;
+    transition: ease-in-out 225ms;
+}
+
+.heart-button:hover {
+    border: 1px solid #FB6100;
+    transition: ease-in-out 225ms;
+}
+
+/* --- Dishes --- */
+
+.dishes-cmpl {
+    margin: 16px;
+}
+
+.dishes-cmpl h3 {
+    padding: 16px;
+    color: #0A3947;
+    background-color: #F9F5F2;
+}
+
+.dishes-cmpl img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --- Dishes Container --- */
+.dishes {
+    position: relative;
+    display: flex;
+    padding: 16px;
+    margin-top: 8px;
+    border: 1px solid #D7D7D7;
+}
+
+.dish-container {
+    display: flex;
+    flex-direction: column;
+}
+.dish-name {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.dish-description {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color:#797979;
+}
+.pricing {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FB6100;
+}
+.checkbox-dishes {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    border: 1px solid #D7D7D7;
+    cursor: pointer;
+}
+
+.checkbox-dishes img {
+    height: 16px;
+}
+
+/* --- Basket --- */
+.basket-cmpl {
+    height: 100vh;
+    width: 30%;
+    position: sticky;
+    top: 0;
+    box-shadow: -2px 0 2px #E5E6E8;
+}
+
+.basket-title {
+    padding: 16px;
+    margin: 0;
+    text-align: center;
+    color: #0A3947;
+    border-bottom: 1px solid #D7D7D7;
+}
+
+/* --- Empty Basket --- */
+.empty-basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 64px 16px 16px 16px;
+}
+
+.empty-basket-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+.empty-basket-headline {
+    color: #0A3947;
+}
+
+.empty-basket-txt {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Full Basket --- */
+.basket-upper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    margin-right: 16px;
+    margin-left: 16px;
+    padding: 16px 0 48px 0; 
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.basket-left {
+    display: flex;
+}
+
+.font {
+    font-size: 14px;
+}
+
+.basket-amount {
+    margin-right: 16px;
+}
+
+.basket-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-dish-description {
+    font-size: 10px;
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.delete-dish {
+    height: 24px;
+}
+
+.basket-change-amount {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+}
+
+.basket-plus {
+    height: 16px;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #EBEBEB;
+}
+
+.basket-minus {
+    height: 16px;
+    padding: 10px;
+    margin-left: 20px;
+    background-color: #EBEBEB;
+}
+
+.basket-calc {
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paybutton {
+    padding: 4px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    background-color: #EBEBEB;
+
+}
+
+/* --- Footer --- */
+
+footer {
+    height: 250px;
+    background-color: #797979;
+}

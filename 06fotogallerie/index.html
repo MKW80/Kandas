@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogallerie</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+
+
+        }
+
+        h1 {
+            z-index: 1;
+            text-align: center;
+            position: relative;
+            top: 100px;
+            color: white;
+            font-size: 50px;
+        }
+
+        h5 {
+            z-index: 1;
+            text-align: center;
+            position: relative;
+            top: 100px;
+            color: white;
+            font-size: 25px;
+        }
+
+        .imgcontainer {
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+            object-fit: cover;
+            margin-top: 438px;
+
+
+        }
+
+        .bigSize {
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
+
+        }
+
+        .bigSize img {
+            z-index: 10;
+            width: 700px;
+            height: 700px;
+            object-fit: cover;
+
+        }
+
+
+        .d-none {
+            display: none;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+        .headImg img {
+            object-fit: cover;
+            width: 100vw;
+            height: 600px;
+            margin-bottom: 50px;
+            position: absolute;
+            top: 0px;
+        }
+
+        input {
+            z-index: 1;
+            padding: 25px;
+            border-radius: 9px;
+            position: absolute;
+            left: 300px;
+            right: 300px;
+            top: 350px;
+            flex: auto;
+            border: none;
+            background: white;
+            font-size: 26px;
+            outline: none;
+            min-width: 500px;
+            text-overflow: ellipsis;
+            overflow: visible;
+        }
+
+
+        .leftButton {
+            position: absolute;
+            height: 60px !important;
+            width: 60px !important;
+            bottom: 700px;
+            left: 100px;
+
+        }
+
+        .rightButton {
+            position: absolute;
+            height: 60px !important;
+            width: 60px !important;
+            bottom: 700px;
+
+            right: 100px;
+
+        }
+
+        .closeButton {
+            position: absolute;
+            height: 60px !important;
+            width: 60px !important;
+            bottom: 60px;
+        }
+    </style>
+</head>
+
+
+<body onload="load()" id="overflow">
+    <h1>Beeindruckende kostenlose & lizenzfreie Bilder</h1>
+    <h5>Mehr als eine Million hochwertige Stock-Bilder und -Videos, geteilt von unserer talentierten Community.</h5>
+    <div class="headImg">
+        <input placeholder="Suche nach Bildern, Vektoren, Videos und Musik....">
+        <img src="https://cdn.pixabay.com/photo/2022/01/04/19/01/fantastic-6915749_1280.jpg">
+    </div>
+    
+    <div class="imgcontainer" id="imgOverview">
+    </div>
+
+    <div id="bigSize" class="bigSize d-none">
+    </div>
+
+
+
+    <script>
+        let images =
+            ['img/bild01.jpg', 'img/bild02.jpg', 'img/bild03.jpg', 'img/bild04.jpg',
+                'img/bild05.jpg', 'img/bild06.jpg', 'img/bild07.jpg', 'img/bild08.jpg',
+                'img/bild09.jpg', 'img/bild10.jpg', 'img/bild11.jpg', 'img/bild12.jpg',
+                'img/bild13.jpg', 'img/bild14.jpg', 'img/bild15.jpg', 'img/bild16.jpg',
+                'img/bild17.jpg', 'img/bild18.jpg', 'img/bild19.jpg', 'img/bild20.jpg',
+                'img/bild21.jpg'
+            ];
+
+        function load() {
+            for (let i = 0; i < images.length; i++) {
+
+                document.getElementById('imgOverview').innerHTML +=
+                    `
+                <img src="${images[i]}" onclick="bigSize(${i})"> 
+
+                 `;
+            }
+        }
+
+        function bigSize(i) {
+            document.getElementById('bigSize').classList.remove('d-none');
+            document.getElementById('overflow').classList.add('overflow');
+            document.getElementById('bigSize').innerHTML =
+                `
+             
+                     <div class="bigSize">
+                            <img src="${images[i]}"> 
+                            <img src="/img/delete.png" class="closeButton" id="smallSize" onclick="smallSize()">
+                            <img src="/img/left.png" class="leftButton" id="smallSize" onclick="leftMove(${i})">
+                            <img src="/img/right.png" class="rightButton" id="smallSize" onclick="rightMove(${i})">
+                   </div>
+              
+            `;
+        }
+
+        function smallSize(i) {
+            document.getElementById('bigSize').classList.add('d-none');
+            document.getElementById('overflow').classList.remove('overflow');
+        }
+
+
+        function leftMove(i) {
+            if (i > 0) {
+                i--
+            } else {
+                i = images.length - 1
+            }
+            bigSize(i);
+        }
+
+        function rightMove(i) {
+            if (i < images.length - 1) {
+                i++
+            } else {
+                i = 0
+            }
+            bigSize(i);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

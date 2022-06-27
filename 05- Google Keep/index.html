@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .headline {
+            border-bottom: solid lightgray 1px;
+            height: 80px;
+            width: 100vw;
+            margin-bottom: 50px;
+        }
+
+        .aside {
+            font-family: sans-serif;
+
+            border-radius: 2px;
+            height: 500px;
+            width: 200px;
+        }
+
+        .aside a {
+            margin-top: 50px;
+            margin-left: 40px;
+            display: flex;
+
+        }
+
+        .mainBlock {
+
+            height: 100vh;
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .javaBlock {
+            margin-top: 20px;
+            height: 500px;
+            width: 500px;
+        }
+
+        .titleBlock {
+            border: solid lightgray 2px;
+            border-radius: 5px;
+            color: rgb(148, 148, 148);
+            height: 200px;
+            width: 500px;
+            box-shadow: 5px 5px 5px silver;
+        }
+
+        .titleBlock span {
+            margin-left: 15px;
+            margin-top: 15px;
+            color: rgb(148, 148, 148);
+            display: flex;
+            align-items: center;
+
+        }
+
+
+        .outputBlock {
+            border-radius: 5px;
+            border: solid lightgray 2px;
+            height: 200px;
+            width: 500px;
+            margin-top: 50px;
+            box-shadow: 5px 5px 5px silver;
+        }
+
+        .javaMainBlock {
+
+            height: 500px;
+            width: 600px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="headline"></div>
+
+    <div class="mainBlock">
+
+
+        <div class="aside">
+            <a> Notizen</a>
+            <a> Erinnerungen</a>
+            <a> Labels bearbeiten</a>
+            <a> Archiv</a>
+            <a> Papierkorb</a>
+
+
+
+        </div>
+
+        <div class="javaMainBlock">
+            <div class="javaBlock">
+                <div class="titleBlock">
+                    <span>Titel</span>
+                    <span id="writeNotice">Notiz schreiben...</span>
+                </div>
+                <div class="outputBlock"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+

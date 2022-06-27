@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liefer Ando</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+<body onload="onload()">
+
+    <header>
+        <div class="align"><img src="img/restaurant.png"><span class="logoname"> <b> Liefer Ando</b></span></div>
+        <div class="align"><span class="adress"><b>Gewerbestr. 4, 79639 Grenzach</b></span></div>
+        <div class="header-rgt align"><img class="flag" src="img/gerflag.png"><img src="img/menubutton.svg"></div>
+    </header>
+
+    <div class="content-cmpl">
+        <!-- Left Side - Dishes -->
+        <div class="left-side">
+            <div class="company-content">
+                <img class="background-img" src="img/headliner2.jpg">
+                <div class="company-logo"><img class="company-logo-inside" src="img/logo_465x320.avif"></src>
+                </div>
+            </div>
+            <div class="company-info">
+                <div class="company-name">
+                    <h2>Andos Burger Lieferservice</h2>
+                    <div class="rating">
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>(0 Bewertungen)</span>
+                    </div>
+                </div>
+                <div class="social-interaktiv">
+                    <img class="info-button cursor" src="img/info.png">
+                    <img class="heart-button cursor" src="img/heart.png">
+                </div>
+            </div>
+            <div class="dishes-cmpl">
+                <img src="img/burger.jpg">
+                <h3>Speisekarte</h3>
+                <div id="dishes"></div>
+            </div>
+        </div>
+        <!-- Right Side - Basket -->
+        <div class="basket-cmpl">
+            <h3 class="basket-title">Warenkorb</h3>
+            <div id="empty-basket"></div>
+            <div id="basket"></div>
+            <div id="basket-calc-cmpl"></div>
+            <!-- leerer Warenkorb -->
+            
+            <!-- voller Warenkorb -->
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

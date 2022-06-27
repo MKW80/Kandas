@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.messages{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.header{
+    border: solid black 1px;
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+h2{
+ margin-left: 50px;
+ font-family: 'Dancing Script', cursive;
+ font-size:xx-large;
+}
+
+
+@media (max-width: 800px) {
+
+    img {
+       width: 300px;
+       height: 150px;
+      }
+  }
+

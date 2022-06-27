@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liefer Ando</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="script.js" ></script>
+
+</head>
+
+<script>
+let fragen = ['frage1', 'frage2', 'frage3', 'frage4', 'frage5' ];
+let antworten = 0;
+
+
+
+function RichtigoderFalsch(a) {
+    
+    if (a==false) {
+        document.getElementById.lenght('test').innerHTML = `falsch`;
+    }else if(a==true) {
+        document.getElementById('test').innerHTML = `richtig`;
+    }
+}
+</script>
+
+
+
+<body> 
+
+
+
+    
+    <button onclick="RichtigoderFalsch()">nächster</button>
+    <div id="test"></div>
+
+
+    <button onclick="RichtigoderFalsch(true)">richtig</button>
+    <button onclick="RichtigoderFalsch(false)">falsch</button>
+</body>
+</html>

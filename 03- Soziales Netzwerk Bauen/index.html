@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .post {
+            width: 500px;
+            height: 150px;
+            border: 1px solid lightgray;
+            padding: 8px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+   
+   <input type="text" id="name" placeholder="neuer post...">
+     <!--   hier werden informationen eingegeben die dann an "let text" übergeben werden-->
+
+
+
+
+    <input type="text" id="message" placeholder="Deine Name">
+    <!--   hier werden informationen eingegeben die dann an "let text" übergeben werden-->
+
+    <button onclick="addPost()">posten</button>
+
+
+    <div id="myposts">Hier wird der ausgegebene Text angezeigt</div>
+
+    <script>
+ /*
+        let eingabe = [];
+        let ausgabe = [];
+
+
+        function addPost() {
+
+            let eingabe = document.getElementById('message').value;
+            let ausgabe = document.getElementById('myposts').value;
+
+            ausgabe.push.innerHtml = `<div class="ausgabe"> 
+          
+          ${ausgabe[i]}
+            </div>
+            `;
+
+            for (let i = 0; i < myposts.length; i++) {
+                ausgabe.innerHtml =``;
+
+            }
+
+
+
+
+        }
+
+
+
+        */
+                let names = [];
+                let postIt = [];
+        
+        
+                function addPost() {
+        
+                    let text = document.getElementById('message').value;
+                    let name = document.getElementById('name').value;
+        
+                    postIt.push(name);
+                    names.push(text);
+        
+                    let myposts = document.getElementById('myposts')
+        
+                    myposts.innerHTML = '';
+                    document.getElementById('myposts').innerHTML = '';
+        
+                    for (let i = 0; i < postIt.length; i++) {
+                        myposts.innerHTML += `
+        
+        
+                    <div class="post"> 
+                      <b>${names[i]}</b><br>
+                    ${postIt[i]}
+                      </div>
+                      `;
+                    }
+                }
+        
+        /*
+                        let names = [];
+                        //  erstellung eines array mit variable "post"
+                        let posts = [];
+                        //  erstellung eines array mit variable "post"
+                
+                        function addPost() {
+                            //erstellung einer Funktion mit Funktionsnamen "addPost"
+                
+                
+                            let text = document.getElementById('message').value;
+                            // erstellen einer variable die mit der id message verknüpft ist 
+                            //(.value holt informationen aus input feld) 
+                            //posts wird an "posts.push(text);" übergeben
+                
+                            let name = document.getElementById('name').value;
+                            // erstellen einer variable die mit der id message verknüpft ist 
+                            //(.value holt informationen aus input feld) 
+                            //posts wird an "posts.push(text);" übergeben
+                
+                            posts.push(text);
+                            // "posts.push(text)" fügt Variable "text" am Ende des Arrays ein
+                
+                            name.push(text);
+                            // "posts.push(text)" fügt Variable "text" am Ende des Arrays ein
+                
+                            let myposts = document.getElementById('myposts')
+                            // erstellen einer variable die mit der id message verknüpft ist 
+                
+                
+                            myposts.innerHTML = '';
+                            // evtl. schon vorhandeneder Text wird aus div Container geleert 
+                
+                
+                            for (let i = 0; i < posts.length; i++) {
+                                // for schleife die bei 0 
+                                // "posts.length" fragt die Länge einer variable ab
+                                // i++ erhöht die anzahl der beitrage nach jedem neuen post
+                
+                
+                                myposts.innerHTML += `
+                
+                            <div class="post"> 
+                  
+                            ${posts[i]}
+                              </div>
+                              `;
+                            }
+                        }
+                */
+                
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
